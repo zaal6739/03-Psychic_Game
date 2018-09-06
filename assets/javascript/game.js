@@ -13,8 +13,8 @@ var letterArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","
 
 //first computer guess and console log
 window.onload = function() {
-	var compGuess = letterArray[Math.floor(Math.random() * letterArray.length)];
-	compAvailGuesses.push(compGuess);
+	var computerChoice = letterArray[Math.floor(Math.random() * letterArray.length)];
+	compAvailGuesses.push(computerChoice);
 	console.log(compAvailGuesses[0]);
 }
 
@@ -29,12 +29,12 @@ document.onkeyup = function(event) {
 //logic allowing for resetting after 9 tries
 if ((playerGuess === compAvailGuesses[0]) && (totGuesses > 0))
     {
-    wins++;
+    ++wins;
 	totGuesses = 9;
 	playerGuesses.length = 0;
 	compAvailGuesses.length = 0;
-	var compGuess = letterArray[Math.floor(Math.random() * letterArray.length)];
-	compAvailGuesses.push(compGuess);
+	var computerChoice = letterArray[Math.floor(Math.random() * letterArray.length)];
+	compAvailGuesses.push(computerChoice);//compguess
 	console.log(compAvailGuesses[0]);
 }
 
@@ -43,12 +43,12 @@ else if ((playerGuess !== compAvailGuesses[0]) && (totGuesses > 0)) {
 }
 
 else {
-	losses++;
+	++losses;
 	totGuesses = 9;
 	playerGuesses.length = 0;
 	compAvailGuesses.length = 0;
-	var compGuess = letterArray[Math.floor(Math.random() * letterArray.length)];
-	compAvailGuesses.push(compGuess);
+	var computerChoice = letterArray[Math.floor(Math.random() * letterArray.length)];
+	compAvailGuesses.push(computerChoice);
 	console.log(compAvailGuesses[0]);
 }
 
